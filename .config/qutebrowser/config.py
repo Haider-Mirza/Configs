@@ -41,8 +41,6 @@ c.fonts.statusbar = '12pt Fira Code'
 config.bind('<Ctrl-j>', 'completion-item-focus --history next', mode='command')
 config.bind('<Ctrl-k>', 'completion-item-focus --history prev', mode='command')
 
-# More binding hints here: https://gitlab.com/Kaligule/qutebrowser-emacs-config/blob/master/config.py
-
 config.bind('X', 'wq')
 config.unbind('d') # Dont want to accidentally delete my tab
 config.bind('Q', 'bookmark-add')

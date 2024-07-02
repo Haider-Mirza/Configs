@@ -1,40 +1,13 @@
 return {
-    {
-        "folke/tokyonight.nvim",
-        config = function() 
-            vim.cmd.colorscheme("tokyonight-night")
-        end
-    },
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
+        "rose-pine/neovim",
+        name = "rose-pine",
         config = function()
-            require("nvim-treesitter.configs").setup({
-                ensure_installed = {
-                    "vimdoc", "lua", "rust", "bash",
-                },
-
-                sync_install = false,
-                auto_install = true,
-                indent = {
-                    enable = true
-                },
-                highlight = {
-                    enable = true,
-                    additional_vim_regex_highlighting = { "markdown" },
+            require('rose-pine').setup({
+                disable_background = true,
+                styles = {
+                    italic = false,
+                    vim.cmd.colorscheme("rose-pine-moon")
                 },
             })
-
-            local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-            treesitter_parser_config.templ = {
-                install_info = {
-                    url = "https://github.com/vrischmann/tree-sitter-templ.git",
-                    files = {"src/parser.c", "src/scanner.c"},
-                    branch = "master",
-                },
-            }
-
-            vim.treesitter.language.register("templ", "templ")
         end
     }
-}
